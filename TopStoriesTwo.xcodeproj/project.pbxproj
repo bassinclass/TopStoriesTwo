@@ -13,6 +13,7 @@
 		817E42642161A5A700A4DF47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 817E42632161A5A700A4DF47 /* Assets.xcassets */; };
 		817E42672161A5A700A4DF47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817E42652161A5A700A4DF47 /* LaunchScreen.storyboard */; };
 		817E426F2161A81A00A4DF47 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817E426E2161A81A00A4DF47 /* SwiftyJSON.swift */; };
+		817E428F21639ABB00A4DF47 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817E428E21639ABB00A4DF47 /* ArticlesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		817E42662161A5A700A4DF47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		817E42682161A5A700A4DF47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		817E426E2161A81A00A4DF47 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		817E428E21639ABB00A4DF47 /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				817E425C2161A5A200A4DF47 /* AppDelegate.swift */,
 				817E425E2161A5A200A4DF47 /* SourcesViewController.swift */,
 				817E42602161A5A200A4DF47 /* Main.storyboard */,
+				817E428E21639ABB00A4DF47 /* ArticlesViewController.swift */,
 				817E42632161A5A700A4DF47 /* Assets.xcassets */,
 				817E42652161A5A700A4DF47 /* LaunchScreen.storyboard */,
 				817E42682161A5A700A4DF47 /* Info.plist */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				817E426F2161A81A00A4DF47 /* SwiftyJSON.swift in Sources */,
+				817E428F21639ABB00A4DF47 /* ArticlesViewController.swift in Sources */,
 				817E425F2161A5A200A4DF47 /* SourcesViewController.swift in Sources */,
 				817E425D2161A5A200A4DF47 /* AppDelegate.swift in Sources */,
 			);

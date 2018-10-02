@@ -8,16 +8,17 @@
 
 import UIKit
 
-class SourcesViewController: UITableViewController {
+class ArticlesViewController: UITableViewController {
     
-    var sources = [[String: String]]()
-    var apiKey = "679376b10aad42019ff49513ad555602"
+    var articles = [[String: String]]()
+    var apiKey = ""
+    var source = [String: String] ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "News Sources"
         let query = "https://newsapi.org/v1/sources?languages=en&country=us&apiKey=\(apiKey)"
-       DispatchQueue.global(qos: .userInitiated).async {
+        DispatchQueue.global(qos: .userInitiated).async {
             [unowned self] in
             if let url = URL(string: query) {
                 if let data = try? Data(contentsOf: url) {
@@ -28,21 +29,21 @@ class SourcesViewController: UITableViewController {
                     }
                 }
             }
-        self.loadError()
+            self.loadError()
         }
     }
     
     func parse(json: JSON) {
-        for result in json["sources"].arrayValue {
-            let id = result["id"].stringValue
-            let name = result["name"].stringValue
+        for result in json["articles"].arrayValue {
+            let title = result["title"].stringValue
             let description = result["description"].stringValue
-            let source = ["id" : id, "name" : name, "description" : description]
-            sources.append(source)
+            let url = result["url"].stringValue
+            let article = ["title",: title, "description": description, "url": url]
+            articles.append(source)
         }
         DispatchQueue.main.async { //students will need help identifying where to call dispatch queue closure.
             [unowned self] in
-              self.tableView.reloadData()
+            self.tableView.reloadData()
         }
     }
     
@@ -59,9 +60,9 @@ class SourcesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ID Cell", for: indexPath)
-        let source = sources[indexPath.row]
-        cell.textLabel?.text = source["name"]
-        cell.detailTextLabel?.text = source["description"]
+        let article = articles[indexPath.row]
+        cell.textLabel?.text = article["title"]
+        cell.detailTextLabel?.text = article["description"]
         return cell
     }
     
