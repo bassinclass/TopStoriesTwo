@@ -38,8 +38,8 @@ class ArticlesViewController: UITableViewController {
             let title = result["title"].stringValue
             let description = result["description"].stringValue
             let url = result["url"].stringValue
-            let article = ["title",: title, "description": description, "url": url]
-            articles.append(source)
+            let article = ["title": title, "description": description, "url": url]
+            articles.append(article)
         }
         DispatchQueue.main.async { //students will need help identifying where to call dispatch queue closure.
             [unowned self] in
@@ -55,7 +55,7 @@ class ArticlesViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return sources.count
+        return articles.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
